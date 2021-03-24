@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import sys
+from impute_subcat import imputer
 
 def file_dump_():
     
@@ -26,7 +27,7 @@ def file_dump_():
     print('Merging Tables & converting values')
     
     df = pd.merge(main_df, meta_df,how='left', on = 'asin')
-    df['sub_category'] = df['sub_category'].fillna(df['asin'])
+    df = imputer(df)
     df['reviewTime'] = pd.to_datetime(df['unixReviewTime'], unit='s')
     df.sort_values(by='reviewTime', inplace=True)
     
