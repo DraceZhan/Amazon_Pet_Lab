@@ -17,8 +17,7 @@ def preprocess():
     	df = pd.read_csv(sys.argv[1])
 
     
-    features = ['First_buy', 'Second_buy','overall_list_first',
-       'overall_list_second', 'purchase_delta']
+    features = df.filter(regex = 'buy|overall|purchase').columns.tolist()
     
     df['target'] = df['target'].astype(str)
 
@@ -36,7 +35,7 @@ def preprocess():
     le_ = LabelEncoder()
     target_le_ = LabelEncoder()
 
-    df[['First_buy','Second_buy']] = df[['First_buy','Second_buy']].apply(le_.fit_transform)
+    df[df.filter(like = 'buy').columns.tolist()] = df[df.filter(like = 'buy').columns.tolist()].apply(le_.fit_transform)
     
     df['target'] = target_le_.fit_transform(df['target'])
     
