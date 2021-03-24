@@ -7,4 +7,4 @@ The datasets used are kindly provided by https://nijianmo.github.io/amazon/index
 Scripts to run an end to end data pipeline to machine learning process.
 
 Can execute the entire process on a local machine by downloading the relevant scripts into a folder and simply typing:
-python run_proc.py
+python run_procs.py
