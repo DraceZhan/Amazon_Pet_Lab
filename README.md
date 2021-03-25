@@ -1,6 +1,7 @@
 # Amazon_Pet_Lab
 Work in progress - (pet) passion project at analyzing Amazon pet lab review data
 
+The main jupyter notebook is just left up for student practioners who are interested in the brainstorming process
 
 The datasets used are kindly provided by https://nijianmo.github.io/amazon/index.html
 
